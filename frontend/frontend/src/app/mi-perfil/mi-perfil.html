@@ -1,0 +1,27 @@
+<div class="mi-perfil" *ngIf="perfil">
+  <a class="back-arrow" routerLink="/dashboard">←</a>
+  <h2>Mi perfil</h2>
+  <div class="perfil-info">
+    <div class="info-item">
+      <strong>Nombre:</strong> {{ perfil.nombre }}
+    </div>
+    <div class="info-item">
+      <strong>Cédula:</strong> {{ perfil.cedula }}
+    </div>
+    <div class="info-item">
+      <strong>Correo:</strong> {{ perfil.correo }}
+    </div>
+    <div class="info-item">
+      <strong>Rol:</strong> {{ perfil.rol === 'usuario' ? 'Empleado' : perfil.rol }}
+
+    </div>
+    <div class="info-item" *ngIf="perfil.fechaCreacion">
+      <strong>Fecha de creación:</strong> {{ perfil.fechaCreacion | date:'medium' }}
+    </div>
+  </div>
+
+  <button class="volver-btn" routerLink="/dashboard">
+    Volver
+  </button>
+
+</div>
